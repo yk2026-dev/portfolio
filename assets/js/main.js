@@ -395,6 +395,16 @@ if (menu) {
 }
 
 
+const element = document.querySelector('.menuPalette__header'); // 対象の要素
+
+if (element) {
+  const width = element.offsetWidth;   // 横幅（px）
+  const height = element.offsetHeight; // 縦幅（px）
+
+  console.log(`横幅: ${width}px, 縦幅: ${height}px`);
+}
+
+
 
 
 

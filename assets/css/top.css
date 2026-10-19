@@ -48,13 +48,18 @@ First View
 }
 
 .firstView__mainTtl {
-    font-size: 8rem;
+    width: 50%;
+    aspect-ratio: 2/1;
+
+    background-image: url(../images/mainTitle.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 
     position: absolute;
-    top: 50%;
-    left: 7.6%;
+    top: 35vh;
+    left: 7%;
 
-    transform: translateY(-65%);
     z-index: 10;
 }
 
@@ -258,21 +263,34 @@ Profile
 
 .profile__more {
     margin: auto;
-    margin-top: 30px;
-    
-    display: block;
-    width: fit-content;
-    height: fit-content;
+    margin-top: 20px;
 
+    display: flex;
+    justify-content: center;
+    gap: 0px 5px;
+    
     font-size: 2.4rem;
-    font-weight: 100;
+}
+
+.profile__more__img {
+    width: 92px;
+    height: 28px;
+
+    background-image: url(../images/more.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.profile__more__arrow {
+    padding-top: 2px;
 }
 
 .profile__more__bar {
     margin: auto;
-    margin-top: 4px;
+    margin-top: 8px;
 
-    width: 130px;
+    width: 150px;
     height: 1px;
     background-color: black;
 }
@@ -1303,7 +1321,7 @@ Footer
 .footer__contact__left__contact {
     margin-top: 30%;
 
-    font-size: 2.3rem;
+    font-size: 2.5rem;
 }
 
 .footer__contact__bar {

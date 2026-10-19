@@ -55,10 +55,6 @@ button {
     transform: skewX(-10deg);
 }
 
-.font--profile--P {
-    font-size: 130%;
-}
-
 /* 800px */
 @media screen and (min-width: 800px) {
     body {
@@ -434,11 +430,36 @@ Section Title
 }
 
 .sectionTtl__ttl {
-    font-size: 5.5rem;
+    height: 60px;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.sectionTtl__ttl--profile {
+    aspect-ratio: 147/55;
+    background-image: url(../images/ttl_profile.svg);
+}
+
+.sectionTtl__ttl--why {
+    height: 70px;
+    aspect-ratio: 123/67;
+    background-image: url(../images/ttle_why.svg);
+}
+
+.sectionTtl__ttl--skills {
+    aspect-ratio: 118/55;
+    background-image: url(../images/ttl_skills.svg);
+}
+
+.sectionTtl__ttl--works {
+    aspect-ratio: 158/52;
+    background-image: url(../images/ttl_works.svg);
 }
 
 .sectionTtl__subTtl {
-    margin-top: 10px;
+    margin-top: 20px;
 
     font-size: 1.8rem;
 }
