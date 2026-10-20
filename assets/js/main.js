@@ -116,34 +116,8 @@
                 });
             });
 
-
     // =======================
-    // crane animation
-    // =======================
-        // profile__arrowのleftを取得
-            $(function() {
-                // 1. 位置を取得したい要素を選択
-                const $profileArrow = $('.profile__arrow');
-
-                if ($profileArrow.length) {
-                    
-                    // leftの位置を測定してCSS変数を更新する独自の関数
-                    function updateLeftPosition() {
-                        const leftPos = $profileArrow.offset().left;
-                        $('html').css('--profileArrow_left', leftPos + 'px');
-                    }
-
-                    // ブラウザのサイズが変更されたら関数を実行
-                    $(window).on('resize', updateLeftPosition);
-
-                    // ページ読み込み時（初回）にも実行
-                    updateLeftPosition();
-                }
-            });
-
-
-    // =======================
-    // Why
+    // Profile
     // =======================
         // arrow
             $(window).on('scroll fontchange', function () {
@@ -172,6 +146,30 @@
 
             // CSSのscaleYに代入して長方形を伸ばす
             arrow.css('transform', `scaleY(${progress})`);
+            });
+
+    // =======================
+    // crane animation
+    // =======================
+        // profile__arrowのleftを取得
+            $(function() {
+                // 1. 位置を取得したい要素を選択
+                const $profileArrow = $('.profile__arrow');
+
+                if ($profileArrow.length) {
+                    
+                    // leftの位置を測定してCSS変数を更新する独自の関数
+                    function updateLeftPosition() {
+                        const leftPos = $profileArrow.offset().left;
+                        $('html').css('--profileArrow_left', leftPos + 'px');
+                    }
+
+                    // ブラウザのサイズが変更されたら関数を実行
+                    $(window).on('resize', updateLeftPosition);
+
+                    // ページ読み込み時（初回）にも実行
+                    updateLeftPosition();
+                }
             });
 
     // =======================
