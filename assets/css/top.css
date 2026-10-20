@@ -466,16 +466,17 @@ crane animation
 }
 
 .craneAnimation__img {
-    width: 25%;
-    aspect-ratio: 3/4;
+    width: 30%;
+    aspect-ratio: 1/1;
 
-    background-image: url(../images/crane_short.svg);
+    background-image: url(../images/crane_short_open.svg);
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;
 
-    position: sticky;
-    top: 0;
+    /* position: sticky; */
+    position: absolute;
+    top: 10vh;
     left: var(--profileArrow_left);
     transform: translateX(-50%);
 }
@@ -485,36 +486,35 @@ crane animation
 Why
 ======================= */
 .section--why {
-    margin-top: 60px;
-    /* transform: rotate(12deg); */
+    height: 200vh;
+
+    position: relative;
+}
+
+.why__sticky {
+    padding: 50px 5%;
     background-color: var(--gray-light);
 
-    padding-top: 45px;
-    padding-bottom: 40px;
+    position: sticky;
+    top: 10vh;
 }
 
 .why__frame {
     margin: auto;
-    margin-top: 48px;
 
     width: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    /* gap: 0px 3%; */
-}
-
-.why__crane {
-    width: 30%;
-    height: fit-content;
+    gap: 0px 2%;
 }
 
 .why__slider {
-    width: 58%;
+    width: 65%;
     height: fit-content;
 
-    padding: 0 -20px;
+    /* padding: 0 -20px; */
 
     opacity: 0;
     visibility: hidden;
@@ -577,7 +577,7 @@ Why
     margin-top: 31px;
 
     width: 90%;
-    aspect-ratio: 3/2;
+    aspect-ratio: 2/1;
 
     padding-right: 30px;
     overflow-y: scroll;

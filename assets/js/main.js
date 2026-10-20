@@ -1,6 +1,11 @@
 'use strict'; {
     $(function() {
     // =======================
+    // Common
+    // ======================= 
+        gsap.registerPlugin(ScrollTrigger);
+
+    // =======================
     // MENU
     // ======================= 
         // fade in
@@ -171,6 +176,35 @@
                     updateLeftPosition();
                 }
             });
+
+        // crane animation
+            // 1. 画像の画面追従（固定）と停止の制御
+                ScrollTrigger.create({
+                    // toggleActions: "play none none reverse",
+                    trigger: ".area--craneAnimation",
+                    start: "top 20%",
+                    end: "bottom bottom",
+                    pin: ".craneAnimation__img", // 画像を画面に固定して一緒に移動しているように見せる
+                    pinSpacing: false,    // 固定解除後、そのままスムーズに画面外へ流れるように隙間を作らない
+                    scrub: true,
+                    markers: true,        // 位置調整が終わったら削除してください
+                });
+
+            // 2. 指定位置（下から30%）を通過した時の背景画像差し替え制御
+                ScrollTrigger.create({
+                    trigger: ".area--craneAnimation",
+                    start: "bottom 30%",  // areaの下から30%が、画面の上（または基準位置）を通過するとき
+                    scrub: true,
+                    markers: true,        // 位置調整が終わったら削除してください
+       
+                    onEnter: function() {
+                        $('.your-element').css('background-image', "url('../images/crane_short_close.svg')");
+                    },
+                    onLeaveBack: function() {
+                        $('.your-element').css('background-image', "url('../images/crane_short_open.svg')");
+                    }
+                });
+
 
     // =======================
     // Why
