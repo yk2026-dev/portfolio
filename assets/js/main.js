@@ -178,33 +178,64 @@
             });
 
         // crane animation
-            // 1. 画像の画面追従（固定）と停止の制御
-                ScrollTrigger.create({
-                    // toggleActions: "play none none reverse",
-                    trigger: ".area--craneAnimation",
-                    start: "top 20%",
-                    end: "bottom bottom",
-                    pin: ".craneAnimation__img", // 画像を画面に固定して一緒に移動しているように見せる
-                    pinSpacing: false,    // 固定解除後、そのままスムーズに画面外へ流れるように隙間を作らない
-                    scrub: true,
-                    markers: true,        // 位置調整が終わったら削除してください
-                });
+            gsap.to('.craneAnimation__img', {
+                y: () => {
+                    const $img = $('.craneAnimation__img');
+                    const $parent = $img.parent(); // 親要素を取得
 
-            // 2. 指定位置（下から30%）を通過した時の背景画像差し替え制御
-                ScrollTrigger.create({
-                    trigger: ".area--craneAnimation",
-                    start: "bottom 30%",  // areaの下から30%が、画面の上（または基準位置）を通過するとき
-                    scrub: true,
-                    markers: true,        // 位置調整が終わったら削除してください
-       
-                    onEnter: function() {
-                        $('.your-element').css('background-image', "url('../images/crane_short_close.svg')");
-                    },
-                    onLeaveBack: function() {
-                        $('.your-element').css('background-image', "url('../images/crane_short_open.svg')");
+                    // 親要素の高さ - (画像自体の高さ + 親要素内での画像の初期トップ位置)
+                    const distance = $parent.outerHeight() - ($img.outerHeight() + $img.position().top);
+                    
+                    return distance;
+                },
+
+                onComplete: () => {
+                    $('.craneAnimation__img').addClass('close');
+                },
+
+                duration: 2,
+
+                scrollTrigger: {
+                    trigger: ".craneAnimation__img",
+                    start: "top 10%",
+                    end: "bottom 50%",
+                    pin: true,
+                    // pinSpacing: false,
+                    // scrub: true,
+                    markers: true,
+
+                    toggleActions: "play none reverse none",
+                },
+            });
+
+        // crane animation string
+            $(function(){
+                const $area = $('.area--craneAnimation');
+                const $string = $('.craneAnimation__string');
+                const $crane = $('.craneAnimation__img');
+
+                function updateRectHeight() {
+                    // 1. 親要素とクレーン画像の「ページ最上部からの絶対位置」をそれぞれ取得
+                    const areaTop = $area.offset().top;
+                    const craneTop = $crane.offset().top;
+
+                    // 2. 親要素を基準とした、クレーン画像の上端の位置を計算
+                    const relativeTop = craneTop - areaTop;
+
+                    // 3. 計算した位置（高さ）を長方形にリアルタイムに適用
+                    if (relativeTop >= 0) {
+                    $string.height(relativeTop);
                     }
-                });
 
+                    // 毎フレームこの関数を繰り返して実行（滑らかなアニメーションのため）
+                    requestAnimationFrame(updateRectHeight);
+                }
+
+                // アニメーションの監視を開始
+                requestAnimationFrame(updateRectHeight);
+            });
+
+          
 
     // =======================
     // Why

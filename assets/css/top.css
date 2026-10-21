@@ -463,11 +463,12 @@ crane animation
     height: 150vh;
 
     position: relative;
+    /* background-color: red; */
 }
 
 .craneAnimation__img {
-    width: 30%;
-    aspect-ratio: 1/1;
+    height: 30%;
+    aspect-ratio: 2/1;
 
     background-image: url(../images/crane_short_open.svg);
     background-position: bottom;
@@ -476,11 +477,27 @@ crane animation
 
     /* position: sticky; */
     position: absolute;
-    top: 10vh;
+    top: -5%;
     left: var(--profileArrow_left);
     transform: translateX(-50%);
+
+    z-index: 10;
 }
 
+.craneAnimation__img.close {
+    background-image: url(../images/crane_short_close.svg);
+}
+
+.craneAnimation__string {
+    position: absolute;
+    top: 0;
+    left: var(--profileArrow_left);
+    /* transform: translateX(-50%); */
+    
+    width: 1.3px;
+    height: 0;
+    background-color: black; /* 長方形の色 */
+}
 
 /* =======================
 Why
