@@ -9,7 +9,7 @@
     // MENU
     // ======================= 
         // fade in
-            const $menuBtn = $('.menu__btn');
+            const $menuBtn_topPage = $('.menu__btn--topPage');
             const $sectionProfile_top = $('.section--profile').offset().top;
 
             let lastScrollPos = 0;
@@ -19,7 +19,7 @@
 
                 if ($scrollPos > lastScrollPos) {
                     if ($scrollPos > $sectionProfile_top - 350) {
-                        $menuBtn.addClass('fadeIn');
+                        $menuBtn_topPage.addClass('fadeIn');
                         if (
                             $('.menuPalette').hasClass('menuOn') 
                             && $('.menuPalette__top__frame').hasClass('fadeOut') 
@@ -33,10 +33,10 @@
                 }
                 else 
                 if ($scrollPos < lastScrollPos) {
-                    if ($menuBtn.hasClass('fadeIn')){
+                    if ($menuBtn_topPage.hasClass('fadeIn')){
 
                         if ($scrollPos < $sectionProfile_top + 400) {
-                            $menuBtn.removeClass('fadeIn');
+                            $menuBtn_topPage.removeClass('fadeIn');
                         
                             if ($('.menuPalette').hasClass('menuOn') ) {
                                 $('.menuPalette__top__frame, .menuPalette__menuList')
@@ -56,41 +56,41 @@
         // open & close
             const time_openAndClose = 300;
         
-            $('.menu__btn').on('click', function(){
-                
-                $('.menuPalette, .menu__btn, .menuPalette__top__frame, .menuPalette__menuList').removeClass('menuOff');
-                $('.menuPalette__top__frame, .menuPalette__menuList').removeClass('fadeIn');
-                
-                $('.menuPalette, .menu__btn, .menu__btn__bar').addClass('menuOn');
+            // top page
+                $('.menu__btn--topPage').on('click', function(){
+                    
+                    $('.menuPalette, .menu__btn--topPage, .menuPalette__top__frame, .menuPalette__menuList').removeClass('menuOff');
+                    $('.menuPalette__top__frame, .menuPalette__menuList').removeClass('fadeIn');
+                    
+                    $('.menuPalette, .menu__btn--topPage, .menu__btn__bar').addClass('menuOn');
 
-                setTimeout(function(){
-                    $('.menuPalette__top__frame, .menuPalette__menuList').addClass('menuOn');
-                },time_openAndClose);
+                    setTimeout(function(){
+                        $('.menuPalette__top__frame, .menuPalette__menuList').addClass('menuOn');
+                    },time_openAndClose);
+                    
+                });
                 
-            });
-            
-            $('.menu__btn--close, .menuPalette__item__btn').on('click', function(){
-                $('.menuPalette__top__frame, .menuPalette__menuList').removeClass('menuOn');
-                
-                $('.menuPalette__top__frame, .menuPalette__menuList').addClass('menuOff');
+                $('.menu__btn--close, .menuPalette__item__btn').on('click', function(){
+                    $('.menuPalette__top__frame, .menuPalette__menuList').removeClass('menuOn');
+                    
+                    $('.menuPalette__top__frame, .menuPalette__menuList').addClass('menuOff');
 
-                setTimeout(function(){
-                    $('.menuPalette').removeClass('menuOn');
-                },time_openAndClose + 300);
+                    setTimeout(function(){
+                        $('.menuPalette').removeClass('menuOn');
+                    },time_openAndClose + 300);
 
-                setTimeout(function(){
-                    $('.menu__btn').removeClass('menuOn');
-                },time_openAndClose);
-                
-                setTimeout(function(){
-                    $('.menu__btn').addClass('menuOff');
-                },time_openAndClose);
-                
-                setTimeout(function(){
-                    $('.menu__btn__bar').removeClass('menuOn');
-                },time_openAndClose + 500);
-            });
-
+                    setTimeout(function(){
+                        $('.menu__btn--topPage').removeClass('menuOn');
+                    },time_openAndClose);
+                    
+                    setTimeout(function(){
+                        $('.menu__btn--topPage').addClass('menuOff');
+                    },time_openAndClose);
+                    
+                    setTimeout(function(){
+                        $('.menu__btn__bar').removeClass('menuOn');
+                    },time_openAndClose + 500);
+                });
 
         // scroll
             const scrollSpeed = 1000;

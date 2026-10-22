@@ -122,7 +122,8 @@ Menu Palette
 }
 
 /* menu btn */
-    .menu__btn {
+    .menu__btn--topPage,
+    .menu__btn--other {
         display: block;
         width: var(--menuBtn-widthAndHeight);
         height: var(--menuBtn-widthAndHeight);
@@ -150,6 +151,11 @@ Menu Palette
 
         opacity: 0;
         visibility: hidden;
+    }
+
+    .menu__btn--other {
+        opacity: 1;
+        visibility: visible;
     }
 
     .menu__btn__bar {
@@ -322,7 +328,7 @@ Menu Palette
     }
 
 /* fade out & fade in */
-    .menu__btn.fadeIn {
+    .menu__btn--topPage.fadeIn {
         opacity: 1;
         visibility: visible;
         transition: 0.4s;
@@ -347,14 +353,8 @@ Menu Palette
     }
 
 /* menu palette .menuOn */
-    .menuPalette.menuOn {
-        width: fit-content;
-        height: fit-content;
-
-        z-index: var(--layer-frontSide);
-    }
-
-    .menu__btn.menuOn {
+    .menu__btn--topPage.menuOn,
+    .menu__btn--other.menuOn {
         transition: var(--time-fadeIn);
 
         animation: menuPalette__animation--open var(--time-openAndClose) var(--bezier-open);
@@ -365,6 +365,13 @@ Menu Palette
         width: var(--menuPalette-width);
         height: var(--menuPalette-height);
         background-color: rgba(255, 255, 255, 1);
+    }
+
+    .menuPalette.menuOn {
+        width: fit-content;
+        height: fit-content;
+
+        z-index: var(--layer-frontSide);
     }
 
     .menu__btn__bar.menuOn {
@@ -385,7 +392,8 @@ Menu Palette
     }
 
 /* menuPalette.off */
-    .menu__btn.menuOff {
+    .menu__btn--topPage.menuOff,
+    .menu__btn--other.menuOff {
         animation: menuPalette__animation--close calc(var(--time-openAndClose) * 0.9) var(--bezier-close);
         animation-direction: reverse;
     }
@@ -410,58 +418,106 @@ Menu Palette
 /* =======================
 Section Title
 ======================= */
-.sectionTtl__frame {
-    text-align: center;
-}
+    .sectionTtl__frame {
+        text-align: center;
+    }
 
-.sectionTtl__frame--upper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0px 25px;
-}
+    .sectionTtl__frame--upper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0px 25px;
+    }
 
-.sectionTtl__bar {
-    width: 23px;
-    height: 3px;
+    .sectionTtl__bar {
+        width: 23px;
+        height: 3px;
 
-    background-color: black;
-    
-    margin-top: 3px;
-}
+        background-color: black;
+        
+        margin-top: 3px;
+    }
 
-.sectionTtl__ttl {
-    height: 60px;
+    .sectionTtl__ttl {
+        height: 60px;
 
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 
-.sectionTtl__ttl--profile {
-    aspect-ratio: 147/55;
-    background-image: url(../images/ttl_profile.svg);
-}
+    .sectionTtl__ttl--profile {
+        aspect-ratio: 147/55;
+        background-image: url(../images/ttl_profile.svg);
+    }
 
-.sectionTtl__ttl--why {
-    height: 70px;
-    aspect-ratio: 123/67;
-    background-image: url(../images/ttle_why.svg);
-}
+    .sectionTtl__ttl--why {
+        height: 70px;
+        aspect-ratio: 123/67;
+        background-image: url(../images/ttle_why.svg);
+    }
 
-.sectionTtl__ttl--skills {
-    aspect-ratio: 118/55;
-    background-image: url(../images/ttl_skills.svg);
-}
+    .sectionTtl__ttl--skills {
+        aspect-ratio: 118/55;
+        background-image: url(../images/ttl_skills.svg);
+    }
 
-.sectionTtl__ttl--works {
-    aspect-ratio: 158/52;
-    background-image: url(../images/ttl_works.svg);
-}
+    .sectionTtl__ttl--works {
+        aspect-ratio: 158/52;
+        background-image: url(../images/ttl_works.svg);
+    }
 
-.sectionTtl__subTtl {
-    margin-top: 20px;
+    .sectionTtl__subTtl {
+        margin-top: 20px;
 
-    font-size: 1.8rem;
-    line-height: 1.2;
-}
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+/* =======================
+Back btn
+======================= */
+    .back__btn {
+        display: block;
+        margin-right: 8px;
+
+        width: 47px;
+        aspect-ratio: var(--btn-ellipse);
+        border-radius: 50%;
+
+        background-image: url(../images/btn_ellipse.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        transform: rotate(180deg);
+
+        position: relative;
+    }
+
+    .back__btn__arrow--top {
+        width: 5px;
+        aspect-ratio: 1/1;
+
+        border-top: solid 1.1px black;
+        border-right: solid 1.1px black;
+        
+        position: absolute;
+        top: 50%;
+        right: 25%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .back__btn__arrow--bar {
+        margin: auto;
+
+        width: 24px;
+        height: 1.1px;
+        
+        background-color: black;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
