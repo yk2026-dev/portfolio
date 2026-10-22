@@ -69,7 +69,7 @@
                 
             });
             
-            $('.menu__btn--close').on('click', function(){
+            $('.menu__btn--close, .menuPalette__item__btn').on('click', function(){
                 $('.menuPalette__top__frame, .menuPalette__menuList').removeClass('menuOn');
                 
                 $('.menuPalette__top__frame, .menuPalette__menuList').addClass('menuOff');
@@ -89,6 +89,57 @@
                 setTimeout(function(){
                     $('.menu__btn__bar').removeClass('menuOn');
                 },time_openAndClose + 500);
+            });
+
+
+        // scroll
+            const scrollSpeed = 1000;
+
+            $('.menuPalette__item__btn--top').on('click', function(){
+                const section_top = 0;
+                
+                $('html, body').animate(
+                    {scrollTop: section_top}, scrollSpeed
+                );
+            });
+            
+            $('.menu__item--profile, .menuPalette__item__btn--profile').on('click', function(){
+                const section_profile = $('#profile').offset().top;
+                
+                $('html, body').animate(
+                    {scrollTop: section_profile}, scrollSpeed
+                );
+            });
+
+            $('.menu__item--why, .menuPalette__item__btn--why').on('click', function(){
+                const section_why = $('#why').offset().top;
+                
+                $('html, body').animate(
+                    {scrollTop: section_why}, scrollSpeed
+                );
+            });
+
+            $('.menu__item--skills, .menuPalette__item__btn--skills').on('click', function(){
+                const section_skills = $('#skills').offset().top;
+                
+                $('html, body').animate(
+                    {scrollTop: section_skills}, scrollSpeed
+                );
+            });
+            $('.menu__item--works, .menuPalette__item__btn--works').on('click', function(){
+                const section_works = $('#works').offset().top;
+                
+                $('html, body').animate(
+                    {scrollTop: section_works}, scrollSpeed
+                );
+            });
+
+            $('.footer__present').on('click', function(){
+                const section_top = 0;
+                
+                $('html, body').animate(
+                    {scrollTop: section_top}, 2500
+                );
             });
 
     // =======================

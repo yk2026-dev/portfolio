@@ -63,7 +63,7 @@
                     <li class="menuPalette__item">
                         <div class="menuPalette__item--upper">
                             <h2 class="menuPalette__item__ttl">Top</h2>
-                            <a class="menuPalette__item__btn" href="#Top">
+                            <a class="menuPalette__item__btn menuPalette__item__btn--top" href="#">
                                 <div class="menuPalette__item__arrow--top"></div>
                                 <div class="menuPalette__item__arrow--bar"></div>
                             </a>
@@ -72,7 +72,7 @@
                     <li class="menuPalette__item">
                         <div class="menuPalette__item--upper">
                             <h2 class="menuPalette__item__ttl">Profile</h2>
-                            <a class="menuPalette__item__btn" href="#Profile">
+                            <a class="menuPalette__item__btn menuPalette__item__btn--profile" href="#profile">
                                 <div class="menuPalette__item__arrow--top"></div>
                                 <div class="menuPalette__item__arrow--bar"></div>
                             </a>
@@ -85,7 +85,7 @@
                     <li class="menuPalette__item">
                         <div class="menuPalette__item--upper">
                             <h2 class="menuPalette__item__ttl">Why?</h2>
-                            <a class="menuPalette__item__btn" href="#Why">
+                            <a class="menuPalette__item__btn menuPalette__item__btn--why" href="#why">
                                 <div class="menuPalette__item__arrow--top"></div>
                                 <div class="menuPalette__item__arrow--bar"></div>
                             </a>
@@ -98,7 +98,7 @@
                     <li class="menuPalette__item">
                         <div class="menuPalette__item--upper">
                             <h2 class="menuPalette__item__ttl">Skills</h2>
-                            <a class="menuPalette__item__btn" href="#Skills">
+                            <a class="menuPalette__item__btn menuPalette__item__btn--skills" href="#skills">
                                 <div class="menuPalette__item__arrow--top"></div>
                                 <div class="menuPalette__item__arrow--bar"></div>
                             </a>
@@ -111,7 +111,7 @@
                     <li class="menuPalette__item">
                         <div class="menuPalette__item--upper">
                             <h2 class="menuPalette__item__ttl">Works</h2>
-                            <a class="menuPalette__item__btn" href="#Works">
+                            <a class="menuPalette__item__btn menuPalette__item__btn--works" href="#works">
                                 <div class="menuPalette__item__arrow--top"></div>
                                 <div class="menuPalette__item__arrow--bar"></div>
                             </a>
@@ -123,7 +123,7 @@
                     <li class="menuPalette__item">
                         <div class="menuPalette__item--upper">
                             <h2 class="menuPalette__item__ttl">+More</h2>
-                            <a class="menuPalette__item__btn" href="#More">
+                            <a class="menuPalette__item__btn menuPalette__item__btn--more" href="./more.html" target="_blank">
                                 <div class="menuPalette__item__arrow--top"></div>
                                 <div class="menuPalette__item__arrow--bar"></div>
                             </a>
@@ -140,12 +140,11 @@
         <header class="header">
             <!-- menu header -->
             <menu class="menu">
-                <a class="menu__item" href="#">Top</a>
-                <a class="menu__item" href="#Profile">Profile</a>
-                <a class="menu__item" href="#Why">Why?</a>
-                <a class="menu__item" href="#Skills">Skills</a>
-                <a class="menu__item" href="#Works">Works</a>
-                <a class="menu__item" href="#More">+More</a>
+                <a class="menu__item menu__item--profile" href="#profile">Profile</a>
+                <a class="menu__item menu__item--why" href="#why">Why?</a>
+                <a class="menu__item menu__item--skills" href="#skills">Skills</a>
+                <a class="menu__item menu__item--works" href="#works">Works</a>
+                <a class="menu__item menu__item--more" href="./more.html" target="_blank">+More</a>
             </menu>
         </header>
         
@@ -160,7 +159,7 @@
                         <div class="firstView__scrollDown__arrow--top"></div>
                         <div class="firstView__scrollDown__arrow--bar"></div>
                     </div>
-                    <p class="firstView__scrollDown">Scroll Down</p>
+                    <p class="firstView__scrollDown"><span class="font">Scroll Down</span></p>
                 </div>
             </article>
 
@@ -172,7 +171,7 @@
                 </div>
             </section>
 
-            <section id="Profile" class="section section--profile">
+            <section id="profile" class="section section--profile">
                 <div class="profile__frame">
                     <div class="profile__left">
                         <div class="profile__img"></div>
@@ -420,14 +419,15 @@
                         </div><!-- profile__history -->
                     </div>
                 </div><!-- profile__frame -->
+
+                <div class="area--craneAnimation">
+                    <div class="craneAnimation__img"></div>
+                    <!-- <div class="craneAnimation__string"></div> -->
+                </div>
             </section>
 
-            <div class="area--craneAnimation">
-                <div class="craneAnimation__img"></div>
-                <div class="craneAnimation__string"></div>
-            </div>
 
-            <section id="Why" class="section section--why">
+            <section id="why" class="section section--why">
                 <div class="why__sticky">
                     <div class="why__frame">
                         <div class="sectionTtl__frame">
@@ -515,7 +515,7 @@
                 </div>
             </section>
 
-            <section id="Skills" class="section section--skills">
+            <section id="skills" class="section section--skills">
                 <div class="skills__sticky">
                     <div class="sectionTtl__frame">
                         <div class="sectionTtl__frame--upper">
@@ -720,7 +720,7 @@
                 </div>
             </section>
 
-            <section id="Works" class="section section--works">
+            <section id="works" class="section section--works">
                 <div class="works__sticky">
                     <div class="sectionTtl__frame">
                         <div class="sectionTtl__frame--upper">

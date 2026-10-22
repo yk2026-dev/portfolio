@@ -52,6 +52,7 @@ button {
     display: inline-block;
     font-family: "Playfair";
     font-size: 118%;
+    font-weight: 100;
     transform: skewX(-10deg);
 }
 

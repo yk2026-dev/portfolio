@@ -265,6 +265,9 @@ Profile
     margin: auto;
     margin-top: 20px;
 
+    width: fit-content;
+    height: fit-content;
+
     display: flex;
     justify-content: center;
     gap: 0px 5px;
