@@ -475,17 +475,38 @@ Section Title
     }
 
 /* =======================
-Back btn
+Footer other
 ======================= */
+    .footer--other {
+        margin-top: 80px;
+
+        width: 100%;
+        height: 600px;
+        /* background-color: red; */
+
+        position: relative;
+    }
+
+/* Back btn */
+    .back__btn__frame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+
+        position: absolute;
+        top: 20%;
+        left: 10%;
+    }
+
     .back__btn {
         display: block;
-        margin-right: 8px;
 
-        width: 47px;
+        width: 65px;
         aspect-ratio: var(--btn-ellipse);
         border-radius: 50%;
 
-        background-image: url(../images/btn_ellipse.svg);
+        background-image: url(../images/btn_ellipse_light.svg);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -496,7 +517,7 @@ Back btn
     }
 
     .back__btn__arrow--top {
-        width: 5px;
+        width: 12px;
         aspect-ratio: 1/1;
 
         border-top: solid 1.1px black;
@@ -504,14 +525,14 @@ Back btn
         
         position: absolute;
         top: 50%;
-        right: 25%;
+        right: 27%;
         transform: translateY(-50%) rotate(45deg);
     }
 
     .back__btn__arrow--bar {
         margin: auto;
 
-        width: 24px;
+        width: 30px;
         height: 1.1px;
         
         background-color: black;
@@ -520,4 +541,39 @@ Back btn
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .back__btn__txt {
+        font-size: 3.8rem;
+    }
+
+    .footer--other__crane {
+        width: 300px;
+        aspect-ratio: 2/3;
+
+        background-image: url(../images/crane_present.svg);
+        background-position: bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        position: absolute;
+        right: 10%;
+        bottom: 25%;
+    }
+
+    .footer--other__copyright__frame {
+        width: 100%;
+        height: 100px;
+        background-color: var(--gray);
+
+        position: absolute;
+        bottom: 0;
+    }
+
+    .footer--other__copyright {
+        font-size: 1.2rem;
+
+        position: absolute;
+        bottom: 20%;
+        right: 4%;
     }
