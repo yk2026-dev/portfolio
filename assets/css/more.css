@@ -61,8 +61,15 @@ More menu
         left: 0;
     }
 
+    .moreMenu__index {
+        font-size: 1.6rem;
+    }
+
     .moreMenu__item__frame {
         margin-top: 20px;
+
+        width: fit-content;
+        height: fit-content;
 
         display: flex;
         justify-content: start;
@@ -78,15 +85,63 @@ More menu
         width: 4px;
         aspect-ratio: 1/1;
         border-radius: 100%;
-        background-color: var(--gray);
+        background-color: var(--gray-dark);
+
+        transition: 0.3s;
+    }
+
+    .moreMenu__item__dot.active {
+        background-color: black;
+        transition: 0.3s;
     }
 
     .moreMenu__item {
         display: block;
-        color: var(--gray);
+        color: var(--gray-dark);
+        transition: 0.3s;
+
+        padding: 0 4px;
+        padding-bottom: 3px;
+        position: relative;
     }
 
+    .moreMenu__item.active {
+        color: black;
+        transition: 0.3s;
+    }
 
+    .moreMenu__item__frame:hover .moreMenu__item__dot {
+        background-color: black;
+        transition: 0.3s;
+    }
+
+    .moreMenu__item__frame:hover .moreMenu__item {
+        color: black;
+        transition: 0.3s;
+    }
+
+    /* 下線 */
+        .moreMenu__item::after {
+                content: "";
+
+                width: 100%;
+                height: 100%;
+                
+                border-bottom: 1px solid black;
+
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                transform: scale(0, 1);
+                transform-origin: right top;
+                transition: transform 0.3s;
+            }
+
+            .moreMenu__item:hover::after {
+                transform-origin: left top;
+                transform: scale(1, 1);
+            }
 
 /* =======================
 contents
