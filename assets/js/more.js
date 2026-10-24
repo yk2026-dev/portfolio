@@ -6,17 +6,36 @@
         gsap.registerPlugin(ScrollTrigger);
 
     // =======================
-    // more menu
+    // Header
+    // ======================= 
+        // ityped 
+            ityped.init('#pageTtl__sub__ityped', {
+                strings: ['私について、もっとくわしく自己紹介させてください。'],
+                typeSpeed: 100,
+                startDelay: 1000,
+                loop: false,
+                showCursor: true,
+                cursorChar: "|",
+
+                onStringTyped: function() {
+                    const $cursor = document.querySelector('.ityped-cursor');
+                    if ($cursor) {
+                    $cursor.remove();
+                    }
+                }
+            });
+
+    // =======================
+    // More menu
     // ======================= 
         // スクロールに合わせて強調
             ScrollTrigger.create({
                 trigger: ".frame--favorite",
                 start: "top 20%",
                 end: "bottom 10%",
-                markers: true,
                 toggleClass: {
                     targets: ".moreMenu__item__dot--favorite, .moreMenu__item--favorite",
-                    className: "active"
+                    className: "on"
                 }
             });
 
@@ -24,10 +43,9 @@
                 trigger: ".frame--strengths",
                 start: "top 20%",
                 end: "bottom 10%",
-                markers: true,
                 toggleClass: {
                     targets: ".moreMenu__item__dot--strengths, .moreMenu__item--strengths",
-                    className: "active"
+                    className: "on"
                 }
             });
 
@@ -35,10 +53,9 @@
                 trigger: ".frame--creative",
                 start: "top 20%",
                 end: "bottom 10%",
-                markers: true,
                 toggleClass: {
                     targets: ".moreMenu__item__dot--creative, .moreMenu__item--creative",
-                    className: "active"
+                    className: "on"
                 }
             });
 
@@ -46,10 +63,9 @@
                 trigger: ".frame--programming",
                 start: "top 20%",
                 end: "bottom 10%",
-                markers: true,
                 toggleClass: {
                     targets: ".moreMenu__item__dot--programming, .moreMenu__item--programming",
-                    className: "active"
+                    className: "on"
                 }
             });
 
@@ -57,10 +73,9 @@
                 trigger: ".frame--careerPlan",
                 start: "top 20%",
                 end: "bottom 10%",
-                markers: true,
                 toggleClass: {
                     targets: ".moreMenu__item__dot--careerPlan, .moreMenu__item--careerPlan",
-                    className: "active"
+                    className: "on"
                 }
             });
 
@@ -68,10 +83,9 @@
                 trigger: ".frame--goal",
                 start: "top 20%",
                 end: "bottom 10%",
-                markers: true,
                 toggleClass: {
                     targets: ".moreMenu__item__dot--goal, .moreMenu__item--goal",
-                    className: "active"
+                    className: "on"
                 }
             });
         
@@ -126,7 +140,92 @@
                 );
             });
 
+    // =======================
+    // fade in animation
+    // ======================= 
+        gsap.to(".frame--favorite", {
+            y: -100,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".frame--favorite",
+                start: "top 70%",
+                end: "top 20%",
+                markers: true, // マーカー表示
+                scrub: true,
+                pin: ".frame--favorite",
+                pinSpacing: true, 
+            },
+        });
 
+        gsap.to(".frame--strengths", {
+            y: -100,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".frame--strengths",
+                start: "top 70%",
+                end: "top 20%",
+                markers: true, // マーカー表示
+                scrub: true,
+                pin: ".frame--strengths",
+                pinSpacing: true, 
+            },
+        });
+
+        gsap.to(".frame--creative", {
+            y: -100,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".frame--creative",
+                start: "top 70%",
+                end: "top 20%",
+                markers: true, // マーカー表示
+                scrub: true,
+                pin: ".frame--creative",
+                pinSpacing: true, 
+            },
+        });
+
+        gsap.to(".frame--programming", {
+            y: -100,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".frame--programming",
+                start: "top 70%",
+                end: "top 20%",
+                markers: true, // マーカー表示
+                scrub: true,
+                pin: ".frame--programming",
+                pinSpacing: true, 
+            },
+        });
+
+        gsap.to(".frame--careerPlan", {
+            y: -100,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".frame--careerPlan",
+                start: "top 70%",
+                end: "top 20%",
+                markers: true, // マーカー表示
+                scrub: true,
+                pin: ".frame--careerPlan",
+                pinSpacing: true, 
+            },
+        });
+
+        gsap.to(".frame--goal", {
+            y: -100,
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".frame--goal",
+                start: "top 70%",
+                end: "top 20%",
+                markers: true, // マーカー表示
+                scrub: true,
+                pin: ".frame--goal",
+                pinSpacing: true, 
+            },
+        });
 
 
 
